@@ -35,14 +35,11 @@ class TxListener:
         if op_type != "comment":
             return
 
-        if '@espoem' in op_value.get("body"):
+        if 'espoem' in op_value.get("body"):
             p = Post(op_value)
             p.reply(self.get_random_fact(), author=self.account)
             logger.info("Replied to %s" % p.identifier)
-            time.sleep(3)
-
-    def send_reply(self, comment):
-        pass
+            time.sleep(4)
 
     def parse_block(self, block_id):
         logger.info("Parsing %s", block_id)
