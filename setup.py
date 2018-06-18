@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='espoem_facts',
-    version='0.0.2',
+    version='0.0.5',
     packages=["espoem_facts",],
     url='http://github.com/emre/espoem_facts',
     license='MIT',

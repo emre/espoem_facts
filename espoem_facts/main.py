@@ -39,7 +39,7 @@ class TxListener:
             p = Post(op_value)
             p.reply(self.get_random_fact(), author=self.account)
             logger.info("Replied to %s" % p.identifier)
-            time.sleep(4)
+            time.sleep(20)
 
     def parse_block(self, block_id):
         logger.info("Parsing %s", block_id)
