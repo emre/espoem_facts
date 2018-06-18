@@ -6,7 +6,7 @@ import random
 
 from steem import Steem
 from steem.post import Post
-from facts import FACTS
+from .facts import FACTS
 
 
 logger = logging.getLogger(__name__)
