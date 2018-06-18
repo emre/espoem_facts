@@ -35,6 +35,9 @@ class TxListener:
         if op_type != "comment":
             return
 
+        if op_value.get("author") == self.account:
+            return
+
         if 'espoem' in op_value.get("body"):
             p = Post(op_value)
             p.reply(self.get_random_fact(), author=self.account)
