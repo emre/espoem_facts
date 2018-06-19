@@ -40,6 +40,11 @@ class TxListener:
 
         if 'espoem' in op_value.get("body"):
             p = Post(op_value)
+            repliers = [r.get("author") for r in p.get_replies()]
+            if self.account in repliers:
+                logger.info("Already stated facts on this. Skipping.")
+                return
+
             p.reply(self.get_random_fact(), author=self.account)
             logger.info("Replied to %s" % p.identifier)
             time.sleep(20)
